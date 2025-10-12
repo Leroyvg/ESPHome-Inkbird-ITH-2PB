@@ -20,6 +20,7 @@ api:
     key: !secret encryption_key
 
 ota:
+  platform: esphome
   password: !secret ota_password
 
 wifi:
@@ -27,14 +28,27 @@ wifi:
   password: !secret wifi_password
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
-  ap:
-    ssid: !secret wifi_fallback_ssid
-    password: !secret wifi_fallback_password
+  # can lead to insufficient flash storage space
+#  ap:
+#    ssid: !secret wifi_fallback_ssid
+#    password: !secret wifi_fallback_password
 
-captive_portal:
+#captive_portal:
 
 bluetooth_proxy:
   active: true
+  connection_slots: 1
+
+# uncomment to be able to track an additional ble device
+#esp32_ble_tracker:
+#  id: ble_tracker
+#  #scan_parameters:
+#  #  continuous: false
+#  scan_parameters:
+#    interval: 1100ms
+#    window: 1100ms
+#    active: true
+#  max_connections: 1
 
 packages:
   ink_bird: !include Inkbird_IHT_2PB.yaml
