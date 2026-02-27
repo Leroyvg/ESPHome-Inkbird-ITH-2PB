@@ -23,6 +23,7 @@ This project allows you to integrate the Inkbird IHT-2PB temperature sensor with
 It provides 4 entities to Home assistant:
 - The temperatures of the 3 probes.
 - The last probe data that was received.
+- The set temperatues for all the 3 probes
 
 ## References
 - https://gitlab.com/sensor-stuff/inkbird-iht-2pb-to-mqtt for the code to enable notification and parse the temperature values.
